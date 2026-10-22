@@ -1,0 +1,19 @@
+{
+  "name": "the-taste-card",
+  "version": "1.0.0",
+  "description": "The Taste Card — A Premium Interactive Field Guide for Blockfest Africa 2026",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "taste",
+    "design",
+    "ai",
+    "field-guide",
+    "blockfest-africa"
+  ],
+  "author": "Aiseosa Uyi-Idahor",
+  "license": "MIT"
+}

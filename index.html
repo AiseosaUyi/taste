@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Taste Card — A Field Guide by Aiseosa Uyi-Idahor | Blockfest Africa 2026</title>
+  <meta name="description" content="A practical interactive field guide for founders, designers, and creatives to apply taste to AI-generated work. Based on the Blockfest Africa 2026 presentation by Aiseosa Uyi-Idahor.">
+  
+  <!-- Typography: Authentic print & editorial pairing: Archivo (19th-century American Grotesque heritage) & Newsreader (Production Type literary book serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500;1,6..72,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Top Utility Bar (Screen only) -->
+  <header class="utility-bar no-print" role="banner">
+    <div class="utility-inner">
+      <div class="utility-meta">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="meta-tag">BLOCKFEST AFRICA 2026 · LAGOS</span>
+        <span class="meta-divider" aria-hidden="true">/</span>
+        <span class="meta-edition">FIELD GUIDE NO. 01</span>
+      </div>
+      <div class="utility-actions">
+        <button type="button" class="btn btn-outline" id="btnPrint" aria-label="Print or save as PDF">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print / PDF</span>
+        </button>
+        <button type="button" class="btn btn-ghost" id="btnQuickNav" aria-label="Jump to Monday Brief">
+          <span>Jump to Brief ↓</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Toast -->
+  <aside id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <span class="toast-indicator" aria-hidden="true">✦</span>
+    <span id="toastMessage" class="toast-text">Copied to clipboard</span>
+  </aside>
+
+  <!-- Main Field Card Sheet -->
+  <main class="field-container" id="mainCard">
+    <article class="notebook-sheet" itemscope itemtype="https://schema.org/CreativeWork">
+      
+      <!-- Notebook Header & Provenance -->
+      <header class="sheet-header">
+        <div class="header-top-row">
+          <div class="header-badge">
+            <span class="edition-num">EDITION 01</span>
+            <span class="edition-sep">·</span>
+            <span class="edition-loc">LAGOS, NIGERIA</span>
+          </div>
+          <div class="card-id-stamp" aria-label="Authentic field guide artifact">
+            <span class="stamp-label">TASTE SPECIFICATION</span>
+            <span class="stamp-code">TC-2026-BF</span>
+          </div>
+        </div>
+
+        <div class="title-block">
+          <div class="title-pre">A FIELD GUIDE FOR FOUNDERS, DESIGNERS &amp; CREATIVES</div>
+          <h1 class="main-title" itemprop="name">THE TASTE CARD</h1>
+          <p class="core-axiom" itemprop="abstract">
+            <span class="axiom-quote">“Taste is knowing what to cut. And signing what’s left.”</span>
+          </p>
+        </div>
+
+        <div class="card-lead-manifesto">
+          <p class="lead-text">
+            AI makes it easier for everyone to produce things, but <strong>human taste</strong> is what differentiates exceptional work from generic output. Use this working artifact before prompt generation, during creative review, and before final delivery.
+          </p>
+        </div>
+
+        <!-- Field Card Registration / Signer -->
+        <div class="signer-strip no-print">
+          <div class="signer-field">
+            <label for="practitionerName" class="signer-label">ISSUED TO / PRACTITIONER:</label>
+            <input type="text" id="practitionerName" class="signer-input" placeholder="Your name or studio name" autocomplete="off" spellcheck="false" maxlength="48">
+          </div>
+          <div class="signer-meta">
+            <span class="signer-hint">Sign your work. Own the judgment.</span>
+          </div>
+        </div>
+        <!-- Print-only signer block -->
+        <div class="print-signer-row print-only" aria-hidden="true">
+          <div class="print-signer-box">
+            <span class="print-label">PRACTITIONER / STUDIO:</span>
+            <span class="print-val" id="printPractitionerName">Anonymous Practitioner</span>
+          </div>
+          <div class="print-signer-box">
+            <span class="print-label">VERIFICATION DATE:</span>
+            <span class="print-val" id="printVerificationDate">October 2026</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- SECTION 1: THE FIVE TASTE PRINCIPLES -->
+      <section class="sheet-section principles-section" id="principlesSection" aria-labelledby="principlesHeading">
+        <div class="section-title-wrap">
+          <div class="section-num-tag">PART 01</div>
+          <h2 id="principlesHeading" class="section-title">THE FIVE PRINCIPLES</h2>
+          <p class="section-sub">Five core disciplines for discerning the exceptional from the synthetic.</p>
+        </div>
+
+        <div class="principles-flow">
+          
+          <!-- Principle 01 -->
+          <article class="principle-card" id="p1">
+            <div class="principle-left">
+              <span class="p-index">01</span>
+              <div class="p-sketch" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Minimal pencil sketch: 3 overlapping reference nodes converging on a diamond name -->
+                  <circle cx="24" cy="24" r="14" stroke="#171717" stroke-width="1.5" stroke-dasharray="3 2"/>
+                  <circle cx="40" cy="24" r="14" stroke="#171717" stroke-width="1.5" stroke-dasharray="3 2"/>
+                  <circle cx="32" cy="40" r="14" stroke="#171717" stroke-width="1.5" stroke-dasharray="3 2"/>
+                  <path d="M32 20L36 28L32 36L28 28Z" fill="#F15A24"/>
+                  <circle cx="32" cy="28" r="2" fill="#FFFFFF"/>
+                </svg>
+              </div>
+            </div>
+            <div class="principle-content">
+              <div class="p-title-row">
+                <h3 class="p-title">COLLECT. MIX. NAME.</h3>
+                <span class="p-badge">SYNTHESIS</span>
+              </div>
+              <p class="p-explanation">
+                Don't accept the first idea. Gather different references, combine them, and identify what makes the strongest one work.
+              </p>
+              <div class="p-question-block">
+                <span class="q-lead">APPLY IT:</span>
+                <p class="p-question">“What can I combine that hasn't been combined this way before?”</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Principle 02 -->
+          <article class="principle-card" id="p2">
+            <div class="principle-left">
+              <span class="p-index">02</span>
+              <div class="p-sketch" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Minimal pencil sketch: Wide fan of divergent lines slashed by a razor cut -->
+                  <path d="M12 48L24 16" stroke="#A8A29E" stroke-width="1.2" stroke-linecap="round"/>
+                  <path d="M22 50L30 14" stroke="#A8A29E" stroke-width="1.2" stroke-linecap="round"/>
+                  <path d="M32 52L32 12" stroke="#171717" stroke-width="2.5" stroke-linecap="round"/>
+                  <path d="M42 50L34 14" stroke="#A8A29E" stroke-width="1.2" stroke-linecap="round"/>
+                  <path d="M52 48L40 16" stroke="#A8A29E" stroke-width="1.2" stroke-linecap="round"/>
+                  <!-- The sharp cut mark -->
+                  <line x1="10" y1="28" x2="54" y2="34" stroke="#F15A24" stroke-width="2" stroke-linecap="square"/>
+                </svg>
+              </div>
+            </div>
+            <div class="principle-content">
+              <div class="p-title-row">
+                <h3 class="p-title">WRITE FIRST. GO WIDE. CUT HARD.</h3>
+                <span class="p-badge">REDUCTION</span>
+              </div>
+              <p class="p-explanation">
+                Define the idea before prompting. Explore many directions, then remove anything that doesn't strengthen it.
+              </p>
+              <div class="p-question-block">
+                <span class="q-lead">APPLY IT:</span>
+                <p class="p-question">“What is the idea, without the decoration?”</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Principle 03 -->
+          <article class="principle-card" id="p3">
+            <div class="principle-left">
+              <span class="p-index">03</span>
+              <div class="p-sketch" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Minimal pencil sketch: 3 protected sacred shapes inside a firm shield -->
+                  <rect x="10" y="10" width="44" height="44" stroke="#171717" stroke-width="1.5"/>
+                  <!-- 1. Color swatch -->
+                  <rect x="18" y="24" width="8" height="8" fill="#F15A24"/>
+                  <!-- 2. Shape -->
+                  <circle cx="32" cy="28" r="4.5" stroke="#171717" stroke-width="1.5" fill="none"/>
+                  <!-- 3. Voice (apostrophe/quote) -->
+                  <path d="M43 25C44.5 25 45.5 26 45.5 27.5C45.5 30 43.5 32 41 33" stroke="#171717" stroke-width="1.8" stroke-linecap="round"/>
+                  <!-- evolving dotted halo -->
+                  <circle cx="32" cy="32" r="26" stroke="#A8A29E" stroke-width="1" stroke-dasharray="2 3"/>
+                </svg>
+              </div>
+            </div>
+            <div class="principle-content">
+              <div class="p-title-row">
+                <h3 class="p-title">PROTECT THREE THINGS.</h3>
+                <span class="p-badge">SANCTITY</span>
+              </div>
+              <p class="p-explanation">
+                Decide what must remain consistent: your colour, your shape and your voice. Let everything else evolve.
+              </p>
+              <div class="p-question-block">
+                <span class="q-lead">APPLY IT:</span>
+                <p class="p-question">“What must never change, even when everything else does?”</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Principle 04 -->
+          <article class="principle-card" id="p4">
+            <div class="principle-left">
+              <span class="p-index">04</span>
+              <div class="p-sketch" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Minimal pencil sketch: Calipers / measurement of a single sentence -->
+                  <line x1="8" y1="32" x2="56" y2="32" stroke="#171717" stroke-width="2"/>
+                  <line x1="8" y1="24" x2="8" y2="40" stroke="#171717" stroke-width="2"/>
+                  <line x1="56" y1="24" x2="56" y2="40" stroke="#171717" stroke-width="2"/>
+                  <path d="M26 22L31 27L42 16" stroke="#F15A24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <!-- caliper tick marks -->
+                  <line x1="24" y1="28" x2="24" y2="36" stroke="#A8A29E" stroke-width="1"/>
+                  <line x1="32" y1="28" x2="32" y2="36" stroke="#A8A29E" stroke-width="1"/>
+                  <line x1="40" y1="28" x2="40" y2="36" stroke="#A8A29E" stroke-width="1"/>
+                </svg>
+              </div>
+            </div>
+            <div class="principle-content">
+              <div class="p-title-row">
+                <h3 class="p-title">WRITE ONE TESTABLE SENTENCE.</h3>
+                <span class="p-badge">VERIFICATION</span>
+              </div>
+              <p class="p-explanation">
+                Describe the outcome you want without prescribing the solution. Make it specific enough that another person can judge whether you achieved it.
+              </p>
+              <div class="p-question-block">
+                <span class="q-lead">APPLY IT:</span>
+                <p class="p-question">“Could a stranger tell whether this works?”</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Principle 05 -->
+          <article class="principle-card" id="p5">
+            <div class="principle-left">
+              <span class="p-index">05</span>
+              <div class="p-sketch" aria-hidden="true">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Minimal pencil sketch: Bullseye target with crosshair cutting through color deco -->
+                  <circle cx="32" cy="32" r="22" stroke="#171717" stroke-width="1.2"/>
+                  <circle cx="32" cy="32" r="14" stroke="#171717" stroke-width="1.2"/>
+                  <circle cx="32" cy="32" r="6" fill="#F15A24"/>
+                  <line x1="32" y1="4" x2="32" y2="60" stroke="#171717" stroke-width="1" stroke-dasharray="2 2"/>
+                  <line x1="4" y1="32" x2="60" y2="32" stroke="#171717" stroke-width="1" stroke-dasharray="2 2"/>
+                </svg>
+              </div>
+            </div>
+            <div class="principle-content">
+              <div class="p-title-row">
+                <h3 class="p-title">CRITIQUE THE GOAL, NOT THE COLOUR.</h3>
+                <span class="p-badge">ALIGNMENT</span>
+              </div>
+              <p class="p-explanation">
+                Before polishing the output, check whether it solves the right problem. Better execution cannot rescue the wrong idea.
+              </p>
+              <div class="p-question-block">
+                <span class="q-lead">APPLY IT:</span>
+                <p class="p-question">“Is this solving the problem, or just looking good?”</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SECTION 2: YOUR MONDAY BRIEF (Interactive) -->
+      <section class="sheet-section brief-section" id="mondayBriefSection" aria-labelledby="briefHeading">
+        <div class="section-title-wrap">
+          <div class="section-num-tag">PART 02</div>
+          <div class="section-heading-row">
+            <div>
+              <h2 id="briefHeading" class="section-title">YOUR MONDAY BRIEF</h2>
+              <p class="section-sub highlight-sub">Complete this before opening your AI tool.</p>
+            </div>
+            <div class="brief-preset-tray no-print">
+              <span class="tray-label">Presets:</span>
+              <button type="button" class="preset-pill" data-preset="founder">Founder</button>
+              <button type="button" class="preset-pill" data-preset="designer">Designer</button>
+              <button type="button" class="preset-pill" data-preset="creative">Creative Lead</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Brief Formulation Form -->
+        <div class="brief-workspace">
+          <form id="briefForm" class="brief-form" onsubmit="return false;" novalidate>
+            
+            <div class="input-grid">
+              <!-- Field 1 -->
+              <div class="input-group">
+                <div class="label-row">
+                  <label for="briefAchieve" class="field-label">
+                    <span class="step-badge">1</span>
+                    <span class="field-label-text">What do you want to achieve?</span>
+                  </label>
+                  <span class="field-hint">The specific outcome</span>
+                </div>
+                <div class="input-wrapper">
+                  <textarea id="briefAchieve" class="brief-textarea" rows="2" placeholder="e.g. reduce checkout friction by removing two redundant confirmation steps" spellcheck="true"></textarea>
+                </div>
+              </div>
+
+              <!-- Field 2 -->
+              <div class="input-group">
+                <div class="label-row">
+                  <label for="briefAudience" class="field-label">
+                    <span class="step-badge">2</span>
+                    <span class="field-label-text">Who is it for?</span>
+                  </label>
+                  <span class="field-hint">The human on the other side</span>
+                </div>
+                <div class="input-wrapper">
+                  <textarea id="briefAudience" class="brief-textarea" rows="2" placeholder="e.g. first-time African mobile shoppers on constrained bandwidth" spellcheck="true"></textarea>
+                </div>
+              </div>
+
+              <!-- Field 3 -->
+              <div class="input-group">
+                <div class="label-row">
+                  <label for="briefWhy" class="field-label">
+                    <span class="step-badge">3</span>
+                    <span class="field-label-text">Why does it matter?</span>
+                  </label>
+                  <span class="field-hint">The testable rationale</span>
+                </div>
+                <div class="input-wrapper">
+                  <textarea id="briefWhy" class="brief-textarea" rows="2" placeholder="e.g. trust is won or lost in the final 8 seconds before payment authorization" spellcheck="true"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="brief-actions-bar no-print">
+              <div class="auto-save-status" id="briefStatus">
+                <span class="status-indicator"></span>
+                <span class="status-text">Draft saved locally</span>
+              </div>
+              <div class="actions-group">
+                <button type="button" class="btn btn-sm btn-ghost" id="btnResetBrief">
+                  <span>Reset Draft</span>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline" id="btnCopyBrief">
+                  <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span>Copy Completed Brief</span>
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Polished Sentence Live Preview -->
+          <div class="brief-preview-card" aria-live="polite">
+            <div class="preview-badge-row">
+              <span class="preview-stamp">COMPLETED MONDAY STATEMENT</span>
+              <span class="preview-tag">READY FOR PROMPT</span>
+            </div>
+            
+            <blockquote class="brief-rendered-sentence">
+              <span class="sentence-fixed">“We want to</span>
+              <mark class="sentence-slot slot-achieve" id="previewAchieve">______</mark>
+              <span class="sentence-fixed">for</span>
+              <mark class="sentence-slot slot-audience" id="previewAudience">______</mark>
+              <span class="sentence-fixed">because</span>
+              <mark class="sentence-slot slot-why" id="previewWhy">______</mark>
+              <span class="sentence-fixed">.”</span>
+            </blockquote>
+
+            <div class="preview-footer">
+              <span class="preview-rule-note">Use this exact sentence as the system instruction or prefix to your AI generation prompt.</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 3: THE REFUSAL EXERCISE (Interactive) -->
+      <section class="sheet-section refusal-section" id="refusalSection" aria-labelledby="refusalHeading">
+        <div class="section-title-wrap">
+          <div class="section-num-tag">PART 03</div>
+          <h2 id="refusalHeading" class="section-title">WHAT DOES YOUR PRODUCT REFUSE TO DO?</h2>
+          <p class="section-sub">Your product, your service, your team, your office. One sentence. Be specific.</p>
+        </div>
+
+        <div class="refusal-card">
+          <div class="refusal-intro">
+            <p class="refusal-rationale">
+              The fastest way to eliminate synthetic mediocrity is establishing a firm boundary. Uncompromising products are defined by what they stubbornly refuse to become.
+            </p>
+          </div>
+
+          <form id="refusalForm" class="refusal-form" onsubmit="return false;" novalidate>
+            <div class="refusal-input-box">
+              <label for="refusalText" class="sr-only">What does your product refuse to do?</label>
+              <textarea id="refusalText" class="refusal-textarea" rows="3" maxlength="180" placeholder="e.g. We refuse to auto-generate bland filler text just to make a card look full." spellcheck="true"></textarea>
+              
+              <div class="refusal-bar">
+                <div class="refusal-counter-box">
+                  <span id="charCount" class="char-count">0</span>
+                  <span class="char-max">/ 180 characters</span>
+                  <div class="char-meter" aria-hidden="true">
+                    <div id="charMeterFill" class="char-meter-fill"></div>
+                  </div>
+                </div>
+                
+                <div class="refusal-actions no-print">
+                  <button type="button" class="btn btn-sm btn-outline" id="btnCopyRefusal">
+                    <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Copy Refusal</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <!-- Refusal Inspiration Starters -->
+          <div class="refusal-starters no-print">
+            <span class="starters-label">Thought starters:</span>
+            <div class="starters-list">
+              <button type="button" class="starter-chip" data-text="We refuse to ship features we cannot explain in a single declarative sentence.">
+                “Refuse features we can't explain in one sentence”
+              </button>
+              <button type="button" class="starter-chip" data-text="We refuse to employ dark patterns that trick user attention for temporary conversion spikes.">
+                “Refuse dark patterns for short-term spikes”
+              </button>
+              <button type="button" class="starter-chip" data-text="We refuse to replace genuine point-of-view with generic AI consensus.">
+                “Refuse replacing point-of-view with AI consensus”
+              </button>
+            </div>
+          </div>
+
+          <!-- Printed refusal display for physical output -->
+          <div class="print-refusal-render print-only" aria-hidden="true">
+            <div class="print-refusal-box">
+              <span class="print-refusal-label">DECLARED BOUNDARY:</span>
+              <p class="print-refusal-text" id="printRefusalStatement">No refusal statement declared yet.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 4: THE FINAL EVALUATION CHECKLIST -->
+      <section class="sheet-section checklist-section" id="checklistSection" aria-labelledby="checklistHeading">
+        <div class="section-title-wrap">
+          <div class="section-num-tag">PART 04</div>
+          <h2 id="checklistHeading" class="section-title">BEFORE YOU SHIP</h2>
+          <p class="section-sub bold-sub">“AI can generate the options. You own the judgment.”</p>
+        </div>
+
+        <div class="checklist-card">
+          <div class="checklist-header-row">
+            <div class="checklist-lead">
+              Apply these three non-negotiable filters to every AI-assisted artifact before release.
+            </div>
+            
+            <div class="checklist-meter-wrap" aria-live="polite">
+              <div class="meter-text">
+                <span id="checksCompleted" class="meter-number">0</span><span class="meter-total">/3</span>
+                <span id="checksStatusLabel" class="meter-label">Judgments Remaining</span>
+              </div>
+              <div class="meter-track" role="progressbar" id="judgmentProgressBar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="3" aria-label="Checklist completion">
+                <div id="meterProgress" class="meter-fill" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <fieldset class="checks-fieldset">
+            <legend class="sr-only">Before you ship evaluation checklist</legend>
+            
+            <!-- Check 1 -->
+            <label class="check-item" for="check1">
+              <input type="checkbox" id="check1" class="check-input" name="shipCheck">
+              <span class="check-box" aria-hidden="true">
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span class="check-content">
+                <span class="check-primary">Does it solve the actual problem?</span>
+                <span class="check-secondary">Ignore aesthetic polish for a moment. Does it mechanically resolve the pain that started the brief?</span>
+              </span>
+            </label>
+
+            <!-- Check 2 -->
+            <label class="check-item" for="check2">
+              <input type="checkbox" id="check2" class="check-input" name="shipCheck">
+              <span class="check-box" aria-hidden="true">
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span class="check-content">
+                <span class="check-primary">Does it feel distinct from the obvious AI-generated answer?</span>
+                <span class="check-secondary">If a competitor ran the identical default prompt, would their output look indistinguishable from yours?</span>
+              </span>
+            </label>
+
+            <!-- Check 3 -->
+            <label class="check-item" for="check3">
+              <input type="checkbox" id="check3" class="check-input" name="shipCheck">
+              <span class="check-box" aria-hidden="true">
+                <svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span class="check-content">
+                <span class="check-primary">What can I remove without losing the idea?</span>
+                <span class="check-secondary">Execute the cut. Strip decorative filler, empty adjectives, and unnecessary elements until only the core remains.</span>
+              </span>
+            </label>
+
+          </fieldset>
+
+          <!-- Verdict banner -->
+          <div id="verdictBanner" class="verdict-banner" aria-live="polite">
+            <div class="verdict-icon" aria-hidden="true">✦</div>
+            <div class="verdict-copy">
+              <strong id="verdictHeadline" class="verdict-headline">Judgments Required</strong>
+              <p id="verdictDetail" class="verdict-detail">Evaluate the three items above to certify release readiness.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARD FOOTER & BRAND SIGNATURE -->
+      <footer class="sheet-footer">
+        <div class="footer-divider" aria-hidden="true"></div>
+        
+        <div class="footer-content-grid">
+          
+          <div class="footer-signature-block">
+            <div class="signature-line-mark" aria-hidden="true">
+              <svg width="180" height="42" viewBox="0 0 180 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Stylized designer ink signature line -->
+                <path d="M10 28C32 26 48 10 58 14C68 18 64 34 50 36C40 37 38 26 56 22C84 16 112 18 136 24C148 27 166 22 172 20" stroke="#171717" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="174" cy="20" r="2.5" fill="#F15A24"/>
+              </svg>
+            </div>
+            <div class="author-attribution">
+              <span class="author-name" itemprop="author">Aiseosa Uyi-Idahor</span>
+              <span class="author-role">Senior Product Designer &amp; Design Engineer</span>
+              <span class="author-event">Blockfest Africa 2026, Lagos</span>
+            </div>
+          </div>
+
+          <div class="footer-axiom-block">
+            <span class="axiom-label">FINAL CREATIVE MANDATE</span>
+            <p class="axiom-text">
+              “AI can generate the options. You own the judgment.”
+            </p>
+            <div class="provenance-tag">
+              <span>DESIGNED FOR PERMANENT USE</span>
+              <span>·</span>
+              <span>OFFLINE ARTIFACT</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Print-only footer attribution -->
+        <div class="print-only print-footer-note" aria-hidden="true">
+          <span>The Taste Card · Blockfest Africa 2026, Lagos · Aiseosa Uyi-Idahor</span>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+
+  <!-- Sticky Print/Action Floating Deck (Screen Only) -->
+  <div class="floating-deck no-print" role="region" aria-label="Field Guide Controls">
+    <div class="deck-inner">
+      <div class="deck-info">
+        <span class="deck-status-dot"></span>
+        <span class="deck-title">The Taste Card</span>
+        <span class="deck-sep">·</span>
+        <span class="deck-stat" id="deckStatusText">Ready</span>
+      </div>
+      <div class="deck-buttons">
+        <button type="button" class="btn btn-deck" id="btnDeckPrint">
+          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print / PDF</span>
+        </button>
+        <button type="button" class="btn btn-deck btn-deck-orange" id="btnDeckExportText">
+          <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Export Markdown</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
